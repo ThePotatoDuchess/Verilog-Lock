@@ -1,14 +1,13 @@
-module numin(in,num);
+module inputnum(in,num);
 input [8:0] in;
 output [3:0] num;
-reg [3:0] num;
 
-always @(in)
+always @(switches)
 	begin
 
 	num[0]= in[8]|in[6]&~in[7]|in[4]&~in[7]&~in[5]|in[2]&~in[7]&~in[5]&~in[3]|in[0]&~in[7]&~in[5]&~in[3]&~in[1];
 	
-	num[1] = ~(in[7]|in[8])&(in[6]|in[5]|((in[2]|in[1])&~in[4]&~in[3]));
+	num[1] = ~(in[7]|~in[8])&(in[6]|in[5]|((in[2]|in[1])&~in[4]&~in[3]));
 
 	num[2] = ~(in[8]|in[7])&(in[6]|in[5]|in[4]|in[3]);
 
