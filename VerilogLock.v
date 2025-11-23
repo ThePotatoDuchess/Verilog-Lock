@@ -25,7 +25,7 @@ enterPassword lock (clk,num,buttons,rst,lckseg,posL,doneL,numL);
 
 checkPassword check (clk,doneL,w1,correct);
 
-lockout l1 (clk,rst,lkoseg,posO,doneO)
+lockout l1 (clk,rst,lkoseg,posO,doneO);
 
 always @(clk)
 begin
