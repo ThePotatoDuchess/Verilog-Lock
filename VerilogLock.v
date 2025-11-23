@@ -20,7 +20,6 @@ begin
   rst = 1;
 end
 
-enterPassword setter (clk,num,buttons,rst,setseg,posS,doneS,numS);
 
 enterPassword lock (clk,num,buttons,rst,lckseg,posL,doneL,numL);
 
@@ -44,7 +43,7 @@ begin
 	if(mode == 2'b00) //setting password
 	begin
 		//copy whatever seg to the display
-		case (posS)
+		case (posL)
 		3'b000 : seg0 = setseg;
 		3'b001 : seg1 = setseg;
 		3'b010 : seg2 = setseg;
@@ -56,9 +55,9 @@ begin
 
 		//check if done, if so set pw and move to next step
 
-		if (doneS == 1)
+		if (doneL == 1)
 		begin
-		pw = numS;
+		pw = numL;
 		mode = 2'b01;
 		rst = 1;
 		attempts = 2'b00;
