@@ -1,0 +1,3 @@
+module LCDdisp (clk,mode,num,Lclk,Lrst,Ldata,Lms,Lss)
+input clk,mode,num;
+output Lclk;Lrst,Ldata,Lms,Lss;

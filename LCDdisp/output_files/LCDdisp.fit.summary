@@ -1,0 +1,11 @@
+I/O Assignment Analysis Status : Successful - Mon Nov 24 17:24:29 2025
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : LCDdisp
+Top-level Entity Name : LCDdisp
+Family : Cyclone V
+Device : 5CSXFC6D6F31C6
+Timing Models : Final
+Total pins : 9 / 499 ( 2 % )
+Total virtual pins : 0
+Total PLLs : 0 / 15 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )
