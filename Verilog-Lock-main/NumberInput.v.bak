@@ -1,0 +1,41 @@
+module NumberInput ( input clk, input button_right, input button_left, input enter_button, input [3:0] switch_value, output reg [2:0] current_position, output reg save);
+
+
+always @ (posedge clk) // values uodate on the positive edge of the clock
+	begin
+		
+		if (button_right) begin // checks if the right button was pressed
+		
+			if (current_position == 5) begin // if the current position of the input is 5, then itll go to 0 once we press the right
+				current_position <= 0;
+				end 
+				else begin
+				current_position <= current_position + 1; // whatever the current position is , add 1 to increment the position
+				end
+		end
+				
+		if (button_left) begin //checks if left button was pressed
+		
+			if (current_position == 0) begin // if the current position that we are using to input is 0 , then itll go to 5 once w epress the left button
+				current_position <= 5;
+				end 
+				else begin
+				current_position <= current_position - 1;// whatever the current position is, subtract 1 to decrement
+				end
+			end
+				
+			
+		if (enter_button) begin // if pressed, saves the value of the digit at that position 
+			save = 1;	// tells the head module to save the current value
+			
+			if (current_position < 5) begin // to ensure that it only jumps to the next position when the current position is not the last position
+				current_position <= current_position+1; 
+				end
+		end
+		else
+		begin
+			save = 0;
+		end
+	end
+endmodule
+			
